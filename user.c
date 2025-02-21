@@ -91,6 +91,8 @@ void account_details(struct user *p)
     printf("Username\t:\t %s\n", p->username);
     printf("Password\t:\t %s\n", p->password);
     printf("Balance\t:\t %f\n", p->balance);
+    printf("\n\n");
+    user();
 }
 
 void adding_balance(struct user *p)
@@ -134,6 +136,7 @@ void adding_balance(struct user *p)
 
     remove(logged_in_user_file);
     rename("temp.txt", logged_in_user_file); // Reminder that this line needs editing later
+    
 }
 
 void withdraw_balance(struct user *p)
@@ -185,6 +188,7 @@ label_2:
 
     remove(logged_in_user_file); // Reminder that this line needs editing later
     rename("temp.txt", logged_in_user_file); // Reminder that this line needs editing later
+    
 }
 
 void transfer_balance(struct user *p, struct user *pt)
@@ -228,7 +232,7 @@ label_3:
     }
 
     char transfer_file_name[256];
-    sprintf(transfer_file_name, "00000%d.txt", transfer_acc_no); // edit later
+    sprintf(transfer_file_name, "%d.txt", transfer_acc_no); // edit later
 
     // debugging line
 
@@ -282,6 +286,7 @@ label_3:
 
     rename("temp.txt", logged_in_user_file); // Reminder that this line needs editing later
     rename("temp2.txt", transfer_file_name); // Reminder that this line needs editing later
+    
 }
 
 void delete_account(struct user *p)
@@ -310,4 +315,5 @@ void delete_account(struct user *p)
     {
         printf("Account not deleted\n");
     }
+    
 }

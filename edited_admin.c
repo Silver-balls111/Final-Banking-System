@@ -36,7 +36,7 @@ bool accountNumberExists(unsigned int accNum) {
     return false;
 }
 
-int admin() {
+int edited_admin() {
     srand(time(NULL));
     printf("Welcome!!! You can create your bank account here....\n");
 
@@ -59,13 +59,15 @@ int admin() {
     scanf("%s", account.password);
 
     // Store account details
-    fp = fopen("individual.txt", "wb");
+    char final_accountNumber[50];
+    sprintf(final_accountNumber, "%u.txt", account.accountNumber);
+    fp = fopen(final_accountNumber, "wb");
     fwrite(&account, sizeof(BankAccount), 1, fp);
     fclose(fp);
 
     // Display account details
     printf("\nAccount Created Successfully!\n");
     printf("\nDetails:\n Account Number: %u \n Username: %s \n Balance: %.2lf\n", account.accountNumber, account.username, account.balance);
-
+    
     return 0;
 }
