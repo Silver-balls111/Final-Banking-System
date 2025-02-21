@@ -36,7 +36,7 @@ bool accountNumberExists(unsigned int accNum) {
     return false;
 }
 
-int main() {
+int admin() {
     srand(time(NULL));
     printf("Welcome!!! You can create your bank account here....\n");
 
