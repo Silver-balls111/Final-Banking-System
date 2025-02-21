@@ -26,9 +26,9 @@ int main()
         printf("Entered username and password doesnot match.");
         printf("\n Press R to try again ");
         printf("\n Press C to create new account ");
-        pritnf("\n Press any other key to exit ");
+        printf("\n Press any other key to exit ");
         char ch;
-        ch = getchar();
+        scanf(" %c");
         if (ch == 'R' || ch == 'r')
         {
             main();
@@ -40,7 +40,6 @@ int main()
         else
         {
             printf("Exiting the system\n");
-            break();
         }
         break;
 
